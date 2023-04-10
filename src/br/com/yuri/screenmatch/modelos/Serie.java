@@ -39,22 +39,27 @@ public class Serie extends Titulo{
         this.ativa = ativa;
     }
 
-//    @Override
-//    public void exibeFichaTecnica() {
-//        System.out.println("Nome: " + getNome());
-//        System.out.println("Ano de lançamento: " + getAnoDeLancamento());
-//        System.out.println("Temporadas: " + getTemporadas());
-//        System.out.println("Episódios por temporada: " + getEpisodiosPorTemporada());
-//        System.out.println("Duração de cada episódio: " + getDuracaoPorEpisodio());
-//        if (this.ativa == false) {
-//            System.out.println("Série finalizada");
-//        }else {
-//            System.out.println("Série ainda em produção");
-//        }
-//        if (this.isIncluidoNoPlano() == false) {
-//            System.out.println("Não incluído no plano");
-//        }else {
-//            System.out.println("Incluído no plano");
-//        }
-//    }
+    @Override
+    public void exibeFichaTecnica() {
+        System.out.println("Nome: " + getNome());
+        System.out.println("Ano de lançamento: " + getAnoDeLancamento());
+        System.out.println("Temporadas: " + getTemporadas());
+        System.out.println("Episódios por temporada: " + getEpisodiosPorTemporada());
+        System.out.println("Duração de cada episódio: " + getDuracaoPorEpisodio());
+        if (this.ativa == false) {
+            System.out.println("Série finalizada");
+        }else {
+            System.out.println("Série ainda em produção");
+        }
+        if (this.isIncluidoNoPlano() == false) {
+            System.out.println("Não incluído no plano");
+        }else {
+            System.out.println("Incluído no plano");
+        }
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return this.temporadas * this.episodiosPorTemporada * this.duracaoPorEpisodio;
+    }
 }

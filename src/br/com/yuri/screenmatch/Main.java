@@ -26,6 +26,7 @@ public class Main {
         minhaSerie.setDuracaoPorEpisodio(45);
         minhaSerie.setIncluidoNoPlano(true);
         minhaSerie.exibeFichaTecnica();
+        System.out.println("Duração da série em minutos: " + minhaSerie.getDuracaoEmMinutos());
 
 
     }
