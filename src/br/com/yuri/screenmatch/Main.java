@@ -1,4 +1,5 @@
 package br.com.yuri.screenmatch;
+import br.com.yuri.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.yuri.screenmatch.modelos.Filme;
 import br.com.yuri.screenmatch.modelos.Serie;
 
@@ -7,6 +8,7 @@ public class Main {
 
         Filme meuFilme = new Filme();
         Serie minhaSerie = new Serie();
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 
         meuFilme.setNome("O Senhor dos Anéis - A Sociedade do Anel");
         meuFilme.setAnoDeLancamento(2001);
@@ -27,6 +29,9 @@ public class Main {
         minhaSerie.setIncluidoNoPlano(true);
         minhaSerie.exibeFichaTecnica();
 
+        calculadora.incluiTitulo(meuFilme);
+        calculadora.incluiTitulo(minhaSerie);
+        System.out.println(calculadora.getTempoTotal());
 
     }
 }
