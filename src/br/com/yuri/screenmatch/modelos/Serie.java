@@ -46,6 +46,7 @@ public class Serie extends Titulo{
         System.out.println("Temporadas: " + getTemporadas());
         System.out.println("Episódios por temporada: " + getEpisodiosPorTemporada());
         System.out.println("Duração de cada episódio: " + getDuracaoPorEpisodio());
+        System.out.println("Tempo para maratonar a série: " + this.getDuracaoEmMinutos() + " minutos");
         if (this.ativa == false) {
             System.out.println("Série finalizada");
         }else {
