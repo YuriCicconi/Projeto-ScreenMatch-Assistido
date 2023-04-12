@@ -29,6 +29,10 @@ public class Titulo {
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
+    public double getSomaDasAvaliacoes() {
+        return somaDasAvaliacoes;
+    }
+
     public int getTotalDeAvaliacoes() {
 
         return totalDeAvaliacoes;

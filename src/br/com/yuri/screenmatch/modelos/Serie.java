@@ -1,6 +1,8 @@
 package br.com.yuri.screenmatch.modelos;
 
-public class Serie extends Titulo{
+import br.com.yuri.screenmatch.calculos.Classificavel;
+
+public class Serie extends Titulo implements Classificavel {
 
     private int temporadas;
     private int episodiosPorTemporada;
@@ -62,5 +64,10 @@ public class Serie extends Titulo{
     @Override
     public int getDuracaoEmMinutos() {
         return this.temporadas * this.episodiosPorTemporada * this.duracaoPorEpisodio;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) (this.getSomaDasAvaliacoes() / getTotalDeAvaliacoes()) / 2;
     }
 }
