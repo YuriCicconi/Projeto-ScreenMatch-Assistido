@@ -47,13 +47,20 @@ public class Main {
         calculadora.incluiTitulo(meuFilme);
         calculadora.incluiTitulo(minhaSerie);
 
-        System.out.println(calculadora.getTempoTotal());
+        System.out.println("Para maratonar os iten selecionados, " + calculadora.getTempoTotal());
 
+        System.out.println("===========================================================");
 
         System.out.println("Nome: " + minhaSerie.getNome() + "\nNota: " + minhaSerie.getClassificacao());
         filtro.filtrar(minhaSerie);
+
+        System.out.println("===========================================================");
+
         System.out.println("Nome: " + meuFilme.getNome() + "\nNota: " + meuFilme.getClassificacao());
         filtro.filtrar(meuFilme);
+
+        System.out.println("===========================================================");
+
         System.out.println("Nome: " + ep.getNome() + "\nNota: " + ep.getClassificacao());
         filtro.filtrar(ep);
 
