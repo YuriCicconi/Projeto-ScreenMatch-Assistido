@@ -5,27 +5,31 @@ import br.com.yuri.screenmatch.modelos.Episodio;
 import br.com.yuri.screenmatch.modelos.Filme;
 import br.com.yuri.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme();
-        Serie minhaSerie = new Serie();
+        Filme meuFilme = new Filme("O Senhor dos Anéis - A Sociedade do Anel", 2001);
+        Filme outroFilme = new Filme("Sobre Meninos e Lobos", 2002);
+        Serie minhaSerie = new Serie("Breaking Bad", 2005);
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         Episodio ep = new Episodio();
         FiltroRecomendacao filtro = new FiltroRecomendacao();
 
-        meuFilme.setNome("O Senhor dos Anéis - A Sociedade do Anel");
-        meuFilme.setAnoDeLancamento(2001);
         meuFilme.setDuracaoEmMinutos(178);
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(10);
         meuFilme.avalia(8);
         meuFilme.avalia(5);
 
+        outroFilme.setDuracaoEmMinutos(161);
+        outroFilme.avalia(10);
+        outroFilme.avalia(9);
+        outroFilme.avalia(6);
+
         System.out.println("===========================================================");
 
-        minhaSerie.setNome("Breaking Bad");
-        minhaSerie.setAnoDeLancamento(2005);
         minhaSerie.setAtiva(false);
         minhaSerie.setTemporadas(5);
         minhaSerie.setEpisodiosPorTemporada(13);
@@ -47,6 +51,11 @@ public class Main {
         calculadora.incluiTitulo(meuFilme);
         calculadora.incluiTitulo(minhaSerie);
 
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+
         System.out.println("Para maratonar os iten selecionados, " + calculadora.getTempoTotal());
 
         System.out.println("===========================================================");
@@ -63,6 +72,11 @@ public class Main {
 
         System.out.println("Nome: " + ep.getNome() + "\nNota: " + ep.getClassificacao());
         filtro.filtrar(ep);
+
+        System.out.println("===========================================================");
+
+        System.out.println("Lista de filmes: ");
+        System.out.println(listaDeFilmes);
 
 
     }
