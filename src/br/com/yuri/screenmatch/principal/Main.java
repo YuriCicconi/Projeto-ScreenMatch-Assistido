@@ -1,4 +1,4 @@
-package br.com.yuri.screenmatch;
+package br.com.yuri.screenmatch.principal;
 import br.com.yuri.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.yuri.screenmatch.calculos.FiltroRecomendacao;
 import br.com.yuri.screenmatch.modelos.Episodio;
