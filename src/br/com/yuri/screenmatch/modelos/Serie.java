@@ -74,4 +74,9 @@ public class Serie extends Titulo implements Classificavel {
     public int getClassificacao() {
         return (int) this.pegaMedia() / 2;
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
+    }
 }
