@@ -1,18 +1,29 @@
 package br.com.yuri.screenmatch.modelos;
 
-public class Titulo implements Comparable<Titulo>{
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
     }
 
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    //Construtor que aceita um objeto do tipo TituloOmdb como parametro.
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 3));
+    }
 
     public void exibeFichaTecnica() {
         System.out.println("Nome: " + nome);
@@ -79,5 +90,12 @@ public class Titulo implements Comparable<Titulo>{
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento +
+                ", duração= " + duracaoEmMinutos;
     }
 }

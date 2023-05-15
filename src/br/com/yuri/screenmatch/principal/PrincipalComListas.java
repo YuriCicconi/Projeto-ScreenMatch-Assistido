@@ -4,9 +4,7 @@ import br.com.yuri.screenmatch.modelos.Filme;
 import br.com.yuri.screenmatch.modelos.Serie;
 import br.com.yuri.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -21,7 +19,7 @@ public class PrincipalComListas {
         Serie minhaSerie = new Serie("Breaking Bad", 2005);
         minhaSerie.avalia(10);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
 
         lista.add(meuFilme);
         lista.add(outroFilme);
@@ -36,7 +34,7 @@ public class PrincipalComListas {
             }
         }
 
-        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        List<String> buscaPorArtista = new ArrayList<>();
 
         buscaPorArtista.add("Yuri");
         buscaPorArtista.add("Amanda");
@@ -48,11 +46,13 @@ public class PrincipalComListas {
         //Para a lista de titulos conseguir ser organizada por ordem alfabética, é preciso que a classe Titulo implemente
         //a interace Comparable.
         Collections.sort(lista);
+        System.out.println("Lista por ordem Alfabética: ");
         System.out.println(lista);
 
         //Para ordenar a lista por ordem de ano de lançamento, é ncessário chamar o método sort, que utiliza a interface Comparator
         //e o método comparing para ordenar do mais antigo para o mais recente.
         lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Lista por ordem de lançamento: ");
         System.out.println(lista);
         
     }
