@@ -49,8 +49,8 @@ public class PrincipalComListas {
         System.out.println("Lista por ordem Alfabética: ");
         System.out.println(lista);
 
-        //Para ordenar a lista por ordem de ano de lançamento, é ncessário chamar o método sort, que utiliza a interface Comparator
-        //e o método comparing para ordenar do mais antigo para o mais recente.
+        //Para ordenar a lista por ordem de ano de lançamento, é ncessário chamar o método sort,
+        //que utiliza a interface Comparator e o método comparing para ordenar do mais antigo para o mais recente.
         lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
         System.out.println("Lista por ordem de lançamento: ");
         System.out.println(lista);
